@@ -42,17 +42,17 @@ int EEPROMing::ValCount(int startPos)
 	return (i - 1) - startPos;
 }
 
-// Pise vrednost val u EEPROM (na startPos poziciji). Vraca true ako je startPos < EEPROM.length()
+// Pise vrednost val u EEPROM (na writePos poziciji). Vraca true ako je writePos < EEPROM.length()
 bool EEPROMing::Write(int val)
 {
 	int n = EEPROM.length();
-	if (startPos < n)
+	if (writePos < n)
 	{
 		if (val == EEPROM_END)
 			val = EEPROM_END - 1;
-		EEPROM.write(startPos++, val);							 // upisivanje date vrednosti val
-		if (startPos < n && EEPROM.read(startPos) != EEPROM_END) // ako na sledecoj poziciji nije EEPROM_END, upisati to
-			EEPROM.write(startPos, EEPROM_END);					 // za slucaj da je ovo poslednji upis pa da se zna da je tu kraj
+		EEPROM.write(writePos++, val);							 // upisivanje date vrednosti val
+		if (writePos < n && EEPROM.read(writePos) != EEPROM_END) // ako na sledecoj poziciji nije EEPROM_END, upisati to
+			EEPROM.write(writePos, EEPROM_END);					 // za slucaj da je ovo poslednji upis pa da se zna da je tu kraj
 		return true;
 	}
 	else

@@ -13,7 +13,7 @@ class EEPROMing
 private:
 	TM1637Display* display;
 	uint8_t* clearScreen;
-	int startPos = 0;
+	int writePos = 0;
 	
 public:
 	EEPROMing();
@@ -22,9 +22,12 @@ public:
 	int ValCount(int start = 0);
 	bool Write(int val);
 
-	int GetStartPos() { return startPos; };
-	void SetStartPos(int val) { startPos = val; };
+	// Dohvati poziciju u EEPROM memoriji na kojoj ce sledeci podatak biti upisan.
+	int GetWritePos() { return writePos; };
+	// Postavi poziciju u EEPROM memoriji na kojoj ce sledeci podatak biti upisan.
+	void SetWritePos(int val) { writePos = val; };
 
+	// Dohvati display koji se koristi za prikaz podataka iz EEPROM memorije.
 	TM1637Display* GetDisplay() { return display; };
 };
 

@@ -2,6 +2,6 @@ EEPROMing   	KEYWORD1
 MemToDisplay	KEYWORD2
 Write	        KEYWORD2
 ValCount	    KEYWORD2
-GetStartPos     KEYWORD2
-SetStartPos     KEYWORD2
+GetWritePos     KEYWORD2
+SetWritePos     KEYWORD2
 GetDisplay      KEYWORD2

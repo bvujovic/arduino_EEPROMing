@@ -5,14 +5,14 @@
 void setup()
 {
   EEPROMing ee;
-  ee.SetStartPos(100);
+  ee.SetWritePos(100);
   ee.Write(123);
   ee.Write(8);
   ee.Write(8);
   ee.Write(255);
   ee.MemToDisplay(101);
   delay(1000);
-  ee.GetDisplay()->showNumberDec(56);
+  ee.GetDisplay()->showNumberDec(ee.GetWritePos());
 }
 
 void loop()
