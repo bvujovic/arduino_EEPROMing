@@ -58,3 +58,8 @@ bool EEPROMing::Write(int val)
 	else
 		return false;
 }
+
+int EEPROMing::Read(int pos = 0)
+{
+	return EEPROM.read(pos);
+}

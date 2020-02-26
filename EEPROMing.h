@@ -21,6 +21,7 @@ public:
 	void MemToDisplay(int start = 0, int itvDelay = 1000);
 	int ValCount(int start = 0);
 	bool Write(int val);
+	int Read(int pos = 0);
 
 	// Dohvati poziciju u EEPROM memoriji na kojoj ce sledeci podatak biti upisan.
 	int GetWritePos() { return writePos; };
